@@ -14,22 +14,41 @@ namespace MqttClients
 		public MainPage()
 		{
 			InitializeComponent();
-            MqttClient mq1 = new MqttClient("192.168.1.2");
+            MqttClient mq1 = new MqttClient("farsala.ddns.net");
 
-            try
+            
+            byte code = mq1.Connect(Guid.NewGuid().ToString(), "evotsis", "eystbots");
+            if (code.ToString() == "0")
             {
-                byte code = mq1.Connect(Guid.NewGuid().ToString(), "evotsis", "eystbots");
-                DisplayAlert("Alert", code.ToString(), "OK1");
-                ushort msgId = mq1.Publish("test", // topic
-                              Encoding.UTF8.GetBytes("MyMessageBody"), // message body
-                              MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
-                              true);
+                DisplayAlert("You are connected to broker ", "farsala.ddns.net", "OK");
+            }
+            else
+            {
+                DisplayAlert("Cannot connect to broker", "Check internet connection", "OK");
+            }
 
-            }
-            catch (Exception)
-            {
-                DisplayAlert("Alert", "You have been alerted", "OK2");
-            }
-		}
-	}
+            //ushort msgId = mq1.Publish("test", // topic
+            //Encoding.UTF8.GetBytes("MyMessageBody"), // message body
+            //MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, // QoS level
+            //true);
+
+            ushort msgId = mq1.Subscribe(new string[] {"kg"},
+                   new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE});
+            ushort msgId2 = mq1.Subscribe(new string[] { "temp" },
+                   new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+
+
+            mq1.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+
+        }
+
+        void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        {
+            //Debug.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
+            string st1 = Encoding.UTF8.GetString(e.Message);
+            string st2 = e.Topic;
+            kg.Text = st1;
+            DisplayAlert(st1,st2, "OK");
+        }
+    }
 }

@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:MqttClients"
              x:Class="MqttClients.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Bees - Observation" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="kg" Text="" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            
+
+            <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk_-X2epsAoM34Ub5Fph5V7iQEd6HsDafwpX1blCxusEbQBGD3"  HorizontalOptions="CenterAndExpand" />
+            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "20" Text="created by S.Votsis" />
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
