@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
@@ -11,7 +12,8 @@ namespace MqttClients
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        
+        public MainPage()
 		{
 			InitializeComponent();
             MqttClient mq1 = new MqttClient("farsala.ddns.net");
@@ -42,13 +44,16 @@ namespace MqttClients
 
         }
 
-        void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+       public void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             //Debug.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
             string st1 = Encoding.UTF8.GetString(e.Message);
             string st2 = e.Topic;
+
+            //kg.BindingContext = st1;
+            
             kg.Text = st1;
-            DisplayAlert(st1,st2, "OK");
+            //DisplayAlert(st1,st2, "OK");
         }
     }
 }
