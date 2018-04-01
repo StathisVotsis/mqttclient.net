@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MqttClients"
+             x:Class="MqttClients.MainPage"
+             xmlns:viewModels="clr-namespace:MqttClients.ViewModels;assembly=MqttClients">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainZigaria/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Bees - Observation" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            <Image Source="https://i.pinimg.com/originals/13/36/b4/1336b499c546a77ed5ff859704dfb83c.png"></Image>
+            <Label Text="Connection Status" Margin="30" FontSize="15"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Message}" TextColor="Black" HorizontalOptions="CenterAndExpand" WidthRequest="150"/>
+            <Button Command="{Binding ConnectBroker}" Text="Connect" TextColor="Black" BackgroundColor="LightYellow" FontSize="20" WidthRequest="200" HorizontalOptions="CenterAndExpand"/>
+            
+            
+            <Label Text="Status" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Message2}" TextColor="Black" HorizontalOptions="CenterAndExpand" WidthRequest="150"/>
+
+
+
+
+            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "20" Text="created by S.Votsis" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
