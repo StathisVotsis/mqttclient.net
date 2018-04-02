@@ -38,7 +38,7 @@ namespace MqttClients.ViewModels
             {
                 return new Command(() =>
                 {
-                    mq1 = new MqttClient("192.168.1.2");
+                    mq1 = new MqttClient("farsala.ddns.net");
                     byte code = mq1.Connect(Guid.NewGuid().ToString(), "evotsis", "eystbots");
                     ushort msgId = mq1.Subscribe(new string[] { "zigaria" },
                     new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
