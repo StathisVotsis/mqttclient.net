@@ -18,9 +18,12 @@
             <Button Command="{Binding ConnectBroker}" Text="Connect" TextColor="Black" BackgroundColor="LightYellow" FontSize="20" WidthRequest="200" HorizontalOptions="CenterAndExpand"/>
             
             
-            <Label Text="Status" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
-            <Entry Text="{Binding Message2}" TextColor="Black" HorizontalOptions="CenterAndExpand" WidthRequest="150"/>
+            <Label Text="Temp" Margin="30" FontSize="20"  TextColor="Red" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Message2}" TextColor="Red" HorizontalOptions="CenterAndExpand" WidthRequest="150"/>
 
+
+            <Label Text="Kg" Margin="30" FontSize="20"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Message3}" TextColor="Black" HorizontalOptions="CenterAndExpand" WidthRequest="150"/>
 
 
 

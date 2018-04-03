@@ -20,6 +20,8 @@ namespace MqttClients.ViewModels
 
         private string _message2;
 
+        private string _message3;
+
         public string Message
         {
             get { return _message; }
@@ -30,6 +32,12 @@ namespace MqttClients.ViewModels
         {
             get { return _message2; }
             set { _message2 = value; OnPropertyChanged(); }
+        }
+
+        public string Message3
+        {
+            get { return _message3; }
+            set { _message3 = value; OnPropertyChanged(); }
         }
 
         public Command ConnectBroker
@@ -73,8 +81,22 @@ namespace MqttClients.ViewModels
         public void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             string st1 = Encoding.UTF8.GetString(e.Message);
-            Message2 = st1;
-            string st2 = e.Topic;
+            //Message2 = st1;
+            char[] charArr = st1.ToCharArray();
+            char[] thisChar1 = {' ', ' ', ' ', ' ',' '};
+            char[] thisChar2 = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+            for (int i=0;i<=4;i++)
+            {
+                thisChar1[i] = charArr[i];
+            }
+            for (int i = 5; i <8; i++)
+            {
+                thisChar2[i] = charArr[i];
+            }
+            Message2 = new string(thisChar1);
+            Message3 = new string(thisChar2);
+
+            //string st2 = e.Topic;
         }
     }
 }
