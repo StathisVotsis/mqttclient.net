@@ -3,10 +3,10 @@
  
 const char* ssid = "JARVIS";
 const char* password =  "eystbots";
-const char* mqttServer = "farsala.ddns.net";
+const char* mqttServer = "";
 const int mqttPort = 1883;
 const char* mqttUser = "evotsis";
-const char* mqttPassword = "eystbots";
+const char* mqttPassword = "";
 char mystr[30]; //Initialized variable to store recieved data
 
 int resetPin = 7;

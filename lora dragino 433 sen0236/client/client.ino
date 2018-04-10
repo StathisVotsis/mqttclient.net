@@ -16,7 +16,7 @@ RH_RF95 rf95;
 
 HX711 scale(DOUT, CLK);
 
-float calibration_factor = 300; //-7050 worked for my 440lb max scale setup
+float calibration_factor = 45; //worked for 100kg load cell
 float units;
 float ounces;
 

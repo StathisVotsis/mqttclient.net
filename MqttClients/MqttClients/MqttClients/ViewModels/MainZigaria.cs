@@ -46,8 +46,8 @@ namespace MqttClients.ViewModels
             {
                 return new Command(() =>
                 {
-                    mq1 = new MqttClient("farsala.ddns.net");
-                    byte code = mq1.Connect(Guid.NewGuid().ToString(), "evotsis", "eystbots");
+                    mq1 = new MqttClient("your server");
+                    byte code = mq1.Connect(Guid.NewGuid().ToString(), "user", "pass");
                     ushort msgId = mq1.Subscribe(new string[] { "zigaria" },
                     new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
                     if (code.ToString() == "0")
