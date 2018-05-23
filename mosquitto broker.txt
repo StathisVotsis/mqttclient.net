@@ -1,0 +1,25 @@
+1. Install raspbian stretch
+
+2. https://alexkychen.wordpress.com/2017/11/09/install-mosquitto-on-raspbian-stretch/
+
+3. https://www.raspberrypi.org/forums/viewtopic.php?t=191140
+
+4. https://medium.com/@eranda/setting-up-authentication-on-mosquitto-mqtt-broker-de5df2e29afc
+
+5. https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04#step-5-%E2%80%94-configuring-mqtt-passwords
+
+6. https://www.youtube.com/watch?v=ghmr8VDxu6M
+
+7. Router admins
+http://ldsbbb.co.nf/Emulators.htm#chap_z1.15
+
+* 8. Configure Mqtt
+
+https://learn.adafruit.com/diy-esp8266-home-security-with-lua-and-mqtt/configuring-mqtt-on-the-raspberry-pi 
+
+admin:
+forthnet
+Farsala123!@#
+
+user
+eystbots
